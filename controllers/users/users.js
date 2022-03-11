@@ -24,21 +24,50 @@ const putUsers = (req,res = response) => {
     });
 }
 
+const loginUsers = async(req, res = response) => {
+
+    const {correo, password} = req.body
+
+    const user = await Usuario.findOne({correo})
+
+    const isValidPassword = await bcryptjs.compare(password, user.password);
+
+    if(isValidPassword){
+        const {estado, nombre, usuario} = user
+        res.status(200).json({
+            msg: 'Login exitoso',
+            usuario: {
+                estado,
+                nombre,
+                usuario,
+                correo
+            }
+        })
+    }
+    else{
+        res.status(400).json({
+            msg: 'Contraseña incorrecta'
+        })
+    }
+
+
+    
+}
+
 const postUsers = async (req, res = response) => {
 
     
-    const {nombre, correo, password, rol}  = req.body;
-    const usuario = new Usuario( {nombre, correo, password, rol} );
+    const {nombre, correo, password, usuario}  = req.body;
+    const user = new Usuario( {nombre, correo, password, usuario} );
 
     //Encriptar la contraseña
     const salt = bcryptjs.genSaltSync();
-    usuario.password = bcryptjs.hashSync( password, salt);
+    user.password = bcryptjs.hashSync( password, salt);
     //Guardar en BD
-    await usuario.save();
-
+    await user.save();
 
     res.json({
-        usuario
+        user
     });
 }
 const deleteUsers = (req,res = response) => {
@@ -59,4 +88,5 @@ module.exports = {
     postUsers,
     deleteUsers,
     patchUsers,
+    loginUsers
 }
