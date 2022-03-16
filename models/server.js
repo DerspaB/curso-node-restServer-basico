@@ -9,9 +9,10 @@ class Server {
         this.app = express();
         this.port = process.env.PORT;
         this.userPath = '/api/users'
+        this.productPath = '/api/products'
 
         // Conectar a la base de datos
-        this.conectarDb();
+        // this.conectarDb();
         // Middlewares son funciones que siempre se ejecutaran al inicar el servidor
         this.middlewares();
         //Rutas de mi aplicación
@@ -36,6 +37,7 @@ class Server {
 
     routes(){
         this.app.use(this.userPath, require('../routes/users'));
+        this.app.use(this.productPath, require('../routes/products'));
     }
 
     listen() {
