@@ -12,7 +12,7 @@ class Server {
         this.productPath = '/api/products'
 
         // Conectar a la base de datos
-        // this.conectarDb();
+        this.conectarDb();
         // Middlewares son funciones que siempre se ejecutaran al inicar el servidor
         this.middlewares();
         //Rutas de mi aplicación
