@@ -6,22 +6,22 @@ const getProducts = (req = request, res = response) => {
         {
             name: 'PC Gamer NVIDIA BATTLEBOX ESSENTIAL',
             precio: 4879000,
-            img: 'https://gtech.systems/wp-content/uploads/2016/03/11-e1558743296579-400x400.png' 
+            img: 'https://cdn.coordiutil.com/imagen-pc_gamer_core_i3_10100_gtx_1650_8_ram_ssd_240_board_b460_chasis_l7_fuente_real_550-2066095-800-600-1-75.jpg' 
         },
         {
             name: 'PC Gamer Titán V3',
             precio: 5399000,
-            img: 'https://gtech.systems/wp-content/uploads/2016/03/pc-gamer-titan-v2-intel-8va-gen-nvidia-gtx-1060-3gb-8gb-ram-1tb_iZ84XvZgrandeXpZ1XfZ63153024-51035998895-4XsZ63153024xIM1-400x400.jpg' 
+            img: 'https://i.linio.com/p/60c36170355074064011f51882ffdd1f-product.jpg' 
         },
         {
             name: 'PC Gamer BATTLEBOX SUPER',
             precio: 699000,
-            img: 'https://gtech.systems/wp-content/uploads/2019/10/SPIDERtrans-400x400.png' 
+            img: 'https://tecnobits.net/wp-content/uploads/2020/03/como-armar-una-pc-gamer-gama-alta.jpg' 
         },
         {
             name: 'PC Gamer Ultra',
             precio: 799000,
-            img: 'https://gtech.systems/wp-content/uploads/2020/02/3a-Copiar-400x400.png' 
+            img: 'https://cdn.shopify.com/s/files/1/0254/2144/7246/products/508b8690-18ab-4ee0-ba60-6aa2d0911089_800x800.png?v=1646326960' 
         },
     ]
 
